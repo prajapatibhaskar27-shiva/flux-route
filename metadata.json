@@ -1,0 +1,7 @@
+{
+  "name": "FluxRoute",
+  "description": "Next-generation dynamic fleet route optimization and intelligent multi-stop dispatch platform with live simulation, flux rerouting, and AI gateway.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

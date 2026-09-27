@@ -1,0 +1,122 @@
+import { CargoWalletState, WalletTransaction } from '../types/wallet';
+
+export const INITIAL_WALLET_STATE: CargoWalletState = {
+  availableBalance: 24850,
+  fuelHoldBalance: 3200,
+  pendingClearanceBalance: 0,
+  currency: '₹',
+  minRecharge: 100,
+  maxRecharge: 100000,
+  autoRechargeEnabled: false,
+  autoRechargeThreshold: 2000,
+  autoRechargeAmount: 5000,
+};
+
+export const INITIAL_TRANSACTIONS: WalletTransaction[] = [
+  {
+    id: 'TXN-CRG-994201',
+    date: '27 Sep 2026, 04:15 PM',
+    timestamp: Date.now() - 1000 * 60 * 45, // 45 mins ago
+    amount: 5000,
+    type: 'credit',
+    category: 'wallet_topup',
+    paymentMethod: 'UPI (GPay)',
+    status: 'successful',
+    referenceId: 'UPI/628910447192',
+    description: 'Instant Cargo Wallet Top-up via UPI',
+    taxInvoiceNo: 'INV-2026-09-9942',
+    customerName: 'Shiva Logistics & Freight Enterprises',
+    customerGstin: '27AABCS1429E1Z2'
+  },
+  {
+    id: 'TXN-CRG-993882',
+    date: '27 Sep 2026, 01:20 PM',
+    timestamp: Date.now() - 1000 * 60 * 220,
+    amount: 3450,
+    type: 'debit',
+    category: 'freight_charge',
+    paymentMethod: 'Cargo Balance',
+    status: 'successful',
+    referenceId: 'CONSIGN-BOM-DEL-882',
+    description: 'Line-Haul Freight Booking: Mumbai (JNPT) → Delhi Hub (1.8 Tonnes)',
+    taxInvoiceNo: 'INV-2026-09-9938',
+    customerName: 'Shiva Logistics & Freight Enterprises',
+    customerGstin: '27AABCS1429E1Z2'
+  },
+  {
+    id: 'TXN-CRG-992140',
+    date: '26 Sep 2026, 06:45 PM',
+    timestamp: Date.now() - 1000 * 60 * 60 * 22,
+    amount: 10000,
+    type: 'credit',
+    category: 'wallet_topup',
+    paymentMethod: 'Net Banking (HDFC Bank)',
+    status: 'successful',
+    referenceId: 'HDFC/NB/88391024',
+    description: 'Commercial Corporate Wallet Deposit',
+    taxInvoiceNo: 'INV-2026-09-9921',
+    customerName: 'Shiva Logistics & Freight Enterprises',
+    customerGstin: '27AABCS1429E1Z2'
+  },
+  {
+    id: 'TXN-CRG-991820',
+    date: '26 Sep 2026, 02:10 PM',
+    timestamp: Date.now() - 1000 * 60 * 60 * 26,
+    amount: 850,
+    type: 'debit',
+    category: 'fuel_surcharge',
+    paymentMethod: 'Cargo Balance',
+    status: 'successful',
+    referenceId: 'FASTag-NH48-9182',
+    description: 'Highway FASTag Toll & Dynamic Fuel Surcharge (Western Corridor)',
+    taxInvoiceNo: 'INV-2026-09-9918',
+    customerName: 'Shiva Logistics & Freight Enterprises',
+    customerGstin: '27AABCS1429E1Z2'
+  },
+  {
+    id: 'TXN-CRG-990412',
+    date: '25 Sep 2026, 11:30 AM',
+    timestamp: Date.now() - 1000 * 60 * 60 * 48,
+    amount: 2000,
+    type: 'credit',
+    category: 'wallet_topup',
+    paymentMethod: 'Debit Card (Axis RuPay)',
+    status: 'failed',
+    referenceId: 'AXIS/PG/DECLINED',
+    description: 'Add Money via Corporate Debit Card',
+    failureReason: 'Bank 3D-Secure authentication timed out. No funds debited.',
+    taxInvoiceNo: 'INV-2026-09-9904-VOID',
+    customerName: 'Shiva Logistics & Freight Enterprises',
+    customerGstin: '27AABCS1429E1Z2'
+  },
+  {
+    id: 'TXN-CRG-989104',
+    date: '24 Sep 2026, 04:05 PM',
+    timestamp: Date.now() - 1000 * 60 * 60 * 70,
+    amount: 1400,
+    type: 'credit',
+    category: 'refund',
+    paymentMethod: 'Cargo Balance',
+    status: 'refunded',
+    referenceId: 'REFUND-BOK-77192',
+    description: 'Automated Refund: Consignment Consignee Rescheduled Pickup',
+    taxInvoiceNo: 'INV-2026-09-9891-REF',
+    customerName: 'Shiva Logistics & Freight Enterprises',
+    customerGstin: '27AABCS1429E1Z2'
+  },
+  {
+    id: 'TXN-CRG-988319',
+    date: '23 Sep 2026, 09:15 AM',
+    timestamp: Date.now() - 1000 * 60 * 60 * 95,
+    amount: 1000,
+    type: 'credit',
+    category: 'wallet_topup',
+    paymentMethod: 'UPI (PhonePe)',
+    status: 'pending',
+    referenceId: 'UPI/99104882194',
+    description: 'UPI Express Recharge (Pending Bank Settlement Confirmation)',
+    taxInvoiceNo: 'INV-2026-09-9883',
+    customerName: 'Shiva Logistics & Freight Enterprises',
+    customerGstin: '27AABCS1429E1Z2'
+  }
+];
